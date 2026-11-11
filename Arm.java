@@ -1,5 +1,5 @@
 // GUIDED IN CLASS: Use this starter to demonstrate extends, super, and @Override.
-public class Arm extends Mechanism implements Loggable {
+public class Arm extends Mechanism implements Loggable, Resettable{
     public Arm() {
         super("Arm");
     }
@@ -17,6 +17,11 @@ public class Arm extends Mechanism implements Loggable {
     @Override 
     public void printStatus(){
         System.out.println("Arm Position: " + super.getPosition());
+    }
+
+    @Override
+    public void reset() {
+        updatePosition(0);
     }
 
 

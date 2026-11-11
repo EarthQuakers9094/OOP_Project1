@@ -7,7 +7,7 @@
 //
 // Start by replacing this comment with your class declaration.
 
-public class Elevator extends Mechanism implements Loggable{
+public class Elevator extends Mechanism implements Loggable, Resettable{
 
     public Elevator(){
         super("Elevator");
@@ -26,6 +26,11 @@ public class Elevator extends Mechanism implements Loggable{
     @Override 
     public void printStatus(){
         System.out.println("Elevator Position: " + super.getPosition());
+    }
+
+    @Override
+    public void reset() {
+        updatePosition(0);
     }
 
 

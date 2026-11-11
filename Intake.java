@@ -1,10 +1,32 @@
-public class Intake {
-    private Motor motor;
+public class Intake extends Mechanism implements Loggable,Resettable{
+    private Motor deployMotor;
+    private Motor spinMotor; 
 
-    public Intake() { motor = new Motor("Intake"); }
+    public Intake(String name) { 
+        deployMotor = new Motor("Intake"); 
+        spinMotor = new Motor("Spin Motor");
+        super(name);
+    }
 
-    public void intake() { motor.setSpeed(50); }
-    public void outtake() { motor.setSpeed(-50); }
-    public void stop() { motor.stop(); }
-    public void printStatus() { motor.printStatus(); }
+    public void intake() { spinMotor.setSpeed(50); }
+    public void outtake() { spinMotor.setSpeed(-50); }
+    public void stop() { spinMotor.stop(); }
+    
+
+    @Override
+    public void reset() {
+     
+    }
+
+    @Override
+    public void setPosition(double position) {
+        if(position <= 90 && position >= 0){
+            updatePosition(position);
+        }
+    }
+
+    @Override
+    public void printStatus() {
+        System.out.println("Intake position: " + super.getPosition() + "Spinner Speed: " + spinMotor.getSpeed());
+    }
 }

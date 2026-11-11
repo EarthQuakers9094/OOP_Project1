@@ -1,5 +1,5 @@
 // This is NOT a Mechanism: it tracks electrical information, not position.
-public class BatteryMonitor implements Loggable {
+public class BatteryMonitor implements Loggable, Resettable{
     private double voltage;
     private double lowestVoltage;
 
@@ -20,6 +20,11 @@ public class BatteryMonitor implements Loggable {
     @Override 
     public void printStatus() {
         System.out.println("Battery: " + voltage + " V (lowest: " + lowestVoltage + " V)");
+    }
+
+    @Override
+    public void reset() {
+        lowestVoltage = voltage;
     }
 
 

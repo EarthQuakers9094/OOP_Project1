@@ -77,9 +77,7 @@ public class RobotSim {
                         intake.printStatus();
                         break;
                     case "status":
-                        for(Loggable device : devices){
-                            device.printStatus(); 
-                        }
+                        logAll(devices);
 
                         // IN CLASS: After adding Loggable, try replacing this
                         // section with a Loggable[] loop over the components.
@@ -114,5 +112,11 @@ public class RobotSim {
         System.out.println("status                Print component status");
         System.out.println("help                  Show these commands");
         System.out.println("quit                  Exit the simulator");
+    }
+
+    private static void logAll(Loggable[] loggables){
+        for(Loggable loggable : loggables){
+            loggable.printStatus();
+        }
     }
 }
