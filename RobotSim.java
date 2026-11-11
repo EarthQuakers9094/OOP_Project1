@@ -1,4 +1,3 @@
-package Source;
 import java.util.Scanner;
 
 // A simple terminal simulator. The command loop is already written for you.
@@ -10,13 +9,16 @@ public class RobotSim {
         Arm arm = new Arm();
 
         // IN CLASS: After writing Elevator.java, replace null with new Elevator().
-        Mechanism elevator = null;
+        //Scho Notes: rewrite to Elevator eleavtor 
+        Elevator elevator = new Elevator();
 
         BatteryMonitor battery = new BatteryMonitor(12.6);
 
-        // IN CLASS: Try creating a generic Mechanism here. Later, when
-        // Mechanism becomes abstract, that line should no longer compile.
-        // Mechanism generic = new Mechanism("Generic Mechanism");
+        Loggable[] devices = {arm, elevator, battery};
+
+        // AFTER WRITING ELEVATOR: Try creating a generic Mechanism here. Later, when
+        
+        //Mechanism generic = new Mechanism("Generic Mechanism");
 
         Scanner scanner = new Scanner(System.in);
         printHelp();
@@ -75,13 +77,10 @@ public class RobotSim {
                         intake.printStatus();
                         break;
                     case "status":
-                        drivetrain.printStatus();
-                        System.out.println("Arm position: " + arm.getPosition() + " degrees");
-                        if (elevator != null) {
-                            System.out.println("Elevator position: " + elevator.getPosition() + " meters");
+                        for(Loggable device : devices){
+                            device.printStatus(); 
                         }
-                        intake.printStatus();
-                        battery.printStatus();
+
                         // IN CLASS: After adding Loggable, try replacing this
                         // section with a Loggable[] loop over the components.
                         break;

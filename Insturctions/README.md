@@ -8,17 +8,17 @@ This is a **plain Java simulation**, not deployable FRC robot code. The starter 
 
 Object-oriented programming (OOP) is a way of organizing code around classes and objects. There are four main principles, often called the **four pillars of OOP**.
 
-### 1. Encapsulation — Organizing and Protecting Data
+### 1. Encapsulation — Protecting Data
 
-Encapsulation means grouping related fields and methods together in a class while controlling how other classes access or modify that data.
+Encapsulation means keeping fields and methods together in a class while controlling how other classes access or modify that data.
 
-**Example:** Our `Drivetrain` class contains four `Motor` objects. Instead of controlling each motor individually from `RobotSim`, we can use methods in the `Drivetrain` class to control them together. Each `Motor` also has its own private fields, such as `speed`, which can only be modified through methods like `setSpeed()`.
+**Example:** Our `Motor` class has a private `speed` field. Other classes must use a method like `setSpeed()` to change its value rather than modifying it directly.
 
 ### 2. Abstraction — Hiding Details
 
 Abstraction means hiding unnecessary implementation details and focusing on what an object can do rather than exactly how it works.
 
-**Example:** Our `Mechanism` class defines a `setPosition()` method that different mechanisms can implement in their own way. Other classes can call `setPosition()` without needing to know exactly how an `Arm` or `Elevator` moves to the requested position.
+**Example:** Our `Mechanism` class will define a `setPosition()` method. Other classes can call this method without needing to know exactly how the mechanism moves.
 
 ### 3. Inheritance — Reusing Code
 
@@ -34,8 +34,6 @@ Polymorphism allows objects of different classes to be treated as the same gener
 
 ### Summary
 
-| Pillar | Main Idea |
-|---|---|
 | Encapsulation | Protect the data |
 | Abstraction | Hide the details |
 | Inheritance | Reuse and extend code |

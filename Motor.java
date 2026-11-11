@@ -1,4 +1,3 @@
-package Source;
 public class Motor {
     private String name;
     private double speed;

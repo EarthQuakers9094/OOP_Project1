@@ -1,4 +1,3 @@
-package Source;
 public class Intake {
     private Motor motor;
 

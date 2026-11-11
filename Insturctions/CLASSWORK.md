@@ -1,6 +1,6 @@
 # Classwork — Inheritance, Abstract Classes, and Interfaces
 
-**Goal:** Use our Java robot simulator to practice inheritance, overriding methods, abstract classes, and interfaces. We'll also review the difference between *has-a* and *is-a* relationships.
+**Goal:** Use our Java robot simulator to practice inheritance, overriding methods, abstract classes, and interfaces. We'll also learn the differences between *has-a* and *is-a* relationships.
 
 Work through the sections in order. If we don't reach interfaces today, we'll pick up there next class.
 
