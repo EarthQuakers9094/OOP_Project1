@@ -2,10 +2,10 @@ public class Intake extends Mechanism implements Loggable,Resettable{
     private Motor deployMotor;
     private Motor spinMotor; 
 
-    public Intake(String name) { 
+    public Intake() { 
         deployMotor = new Motor("Intake"); 
         spinMotor = new Motor("Spin Motor");
-        super(name);
+        super("Intake");
     }
 
     public void intake() { spinMotor.setSpeed(50); }
